@@ -8,3 +8,10 @@ jobs:
           name: Install npm dependencies
           command: |
             npm install --save
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
+post:
+    - curl -sSL https://download.sourceclear.com/ci.sh | sh
