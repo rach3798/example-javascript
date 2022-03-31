@@ -1,0 +1,14 @@
+version:
+jobs:
+ run-tests:
+  docker:
+    -image: circleci/node:10
+  steps:
+    -checkout
+    -run:
+      name: Install npm dependencies
+      command: |
+        npm install --save
+workflows:
+post:
+    - curl -sSL https://download.sourceclear.com/ci.sh | sh
